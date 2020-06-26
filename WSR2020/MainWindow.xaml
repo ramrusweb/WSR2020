@@ -1,0 +1,22 @@
+﻿<Window x:Class="WSR2020.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2020"
+        mc:Ignorable="d"
+        MinWidth="800"
+        MinHeight="450"
+        MaxWidth="800"
+        MaxHeight="450"
+        x:Name="mainwindow"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <!--<Border Width="Auto" Height="Auto" CornerRadius="50">-->
+    <Grid>
+        <Frame NavigationUIVisibility="Hidden" x:Name="frame" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="800"/>
+    </Grid>
+    <!--</Border>-->
+
+</Window>

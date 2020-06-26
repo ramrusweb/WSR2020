@@ -1,0 +1,83 @@
+﻿<Page x:Class="WSR2020.personalarea.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSR2020.personalarea"
+      mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+      x:Name="LK_MLBD"
+      MaxHeight="450" MaxWidth="800"
+      WindowHeight="450" WindowWidth="800"
+      MinHeight="450" MinWidth="800"
+      Title="Admin">
+
+    <Grid x:Name="Grid_KeyUp">
+        <Frame x:Name="frame"/>
+
+        <Label Content="Регистрационный номер" HorizontalAlignment="Left" Margin="99,18,0,0" VerticalAlignment="Top" Width="156" Height="38" />
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="104,154,0,0" VerticalAlignment="Top" Width="156" Height="38" />
+        <Label Content="Возраст" HorizontalAlignment="Left" Margin="104,211,0,0" VerticalAlignment="Top" Width="156" Height="38" />
+        <Label Content="Мобильльный телефон" HorizontalAlignment="Left" Margin="104,271,0,0" VerticalAlignment="Top" Width="156" Height="37" />
+
+        <TextBox HorizontalAlignment="Left" Height="38" Margin="275,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"/>
+        <TextBox HorizontalAlignment="Left" Height="38" Margin="275,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"/>
+        <TextBox HorizontalAlignment="Left" Height="38" Margin="275,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="275,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"/>
+
+        <Button Width="100" Margin="605,98,95,314" Content="Добавить"/>
+        <Button Width="100" Margin="605,154,95,258" Content="Удалить"/>
+        <Button Width="100" Margin="605,211,95,201" Content="Обновить"/>
+
+        <Button Width="100" Margin="605,271,95,142" Content="Посмотреть"/>
+
+        <DataGrid x:Name="dataGrid" VerticalGridLinesBrush="WhiteSmoke" IsReadOnly="True" Margin="60,326,42,14.6">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя" Binding="{Binding _name}"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding _phone}"/>
+                <DataGridTextColumn Header="Моб. телефон" Binding="{Binding _mphone}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--Верхний Rectangle-->
+        <Rectangle
+            Fill="DarkSlateGray"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="800"
+            Height="45">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="MediumSlateBlue" Opacity=".5" ShadowDepth="4" BlurRadius="8"></DropShadowEffect>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <!--@Login-->
+        <Label
+            x:Name="welcomeLb"
+            Content=""
+            HorizontalAlignment="Left"
+            Foreground="DarkSlateGray"
+            FontFamily="Lucida Console"
+            FontSize="9pt"
+            Margin="10,61,0,0"
+            VerticalAlignment="Top" Height="24" Width="250"/>
+        <Image x:Name="signUpImg" HorizontalAlignment="Left" Height="32" Margin="10,6,0,0" VerticalAlignment="Top" Width="32" Visibility="Visible" Stretch="Fill" Source="/Resources/Avatar.png"/>
+
+
+        <!--Кнопка Свернуть-->
+        <Button x:Name="_Collapse" Width="24" Height="24" Margin="734,9,42,416.6"
+                Background="LightSlateGray" Cursor="Hand" Content="_" FontFamily="Lucida Console" FontSize="16" Foreground="WhiteSmoke" RenderTransformOrigin="-1.292,1.492">
+            <Button.Effect>
+                <DropShadowEffect Color="Red" Opacity=".2" ShadowDepth="4" BlurRadius="10"/>
+            </Button.Effect>
+        </Button>
+        <!--Кнопка Закрыть-->
+        <Button x:Name="xExit" Width="24" Height="24" Margin="762,9,14,416.6"
+                Background="Red" Cursor="Hand" Content="x" FontFamily="Lucida Console" FontSize="16" Foreground="WhiteSmoke">
+            <Button.Effect>
+                <DropShadowEffect Color="Red" Opacity=".2" ShadowDepth="4" BlurRadius="10"/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Page>

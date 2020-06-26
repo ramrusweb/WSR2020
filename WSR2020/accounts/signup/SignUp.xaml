@@ -1,0 +1,182 @@
+﻿<Page x:Class="WSR2020.accounts.signup.SignUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSR2020.accounts.signup"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      x:Name="signUpMLBD"
+      MaxHeight="450" MaxWidth="800"
+      MinHeight="450" MinWidth="800"
+      Title="SignUpP">
+
+    <Grid x:Name="Grid_KeyUp_SignUp">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="frame" Margin="-47,-2,30,2"/>
+
+        <!--Верхний Rectangle-->
+        <Rectangle
+            Fill="DarkSlateGray"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="800"
+            Height="45">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="MediumSlateBlue" Opacity=".5" ShadowDepth="4" BlurRadius="8"></DropShadowEffect>
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <!--Заголовок-->
+        <Label
+            Content="Создать новый аккаунт"
+            HorizontalAlignment="Center"
+            Margin="249,8,265,0"
+            VerticalAlignment="Top"
+            FontFamily="Lucida Console"
+            FontSize="16pt"
+            Foreground="WhiteSmoke" Height="34" Width="286"/>
+
+        <!--Кнопка Свернуть-->
+        <Button x:Name="_Collapse" Width="24" Height="24" Margin="734,7,42,418.6"
+                Background="LightSlateGray" Cursor="Hand" Content="_" FontFamily="Lucida Console" FontSize="16" Foreground="WhiteSmoke">
+            <Button.Effect>
+                <DropShadowEffect Color="Red" Opacity=".2" ShadowDepth="4" BlurRadius="10"/>
+            </Button.Effect>
+        </Button>
+
+        <!--Кнопка Закрыть-->
+        <Button x:Name="xExit" Width="24" Height="24" Margin="762,7,14,418.6"
+                Background="Red" Cursor="Hand" Content="x" FontFamily="Lucida Console" FontSize="16" Foreground="WhiteSmoke">
+            <Button.Effect>
+                <DropShadowEffect Color="Red" Opacity=".2" ShadowDepth="4" BlurRadius="10"/>
+            </Button.Effect>
+        </Button>
+
+        <!--Логин-->
+        <Label
+            Content="Логин или эл. адрес:"
+            HorizontalAlignment="Left"
+            Foreground="DarkSlateGray"
+            FontFamily="Lucida Console"
+            FontSize="12pt"
+            Margin="94,62,0,0"
+            VerticalAlignment="Top" Height="24"/>
+        <Image Source="/Resources/Email.png" HorizontalAlignment="Left" Height="51" Margin="32,78,0,0" VerticalAlignment="Top" Width="50"/>
+        <TextBox
+            x:Name="signUpUser"
+            HorizontalAlignment="Left"
+            Height="38" Margin="94,91,0,0"
+            VerticalAlignment="Top"
+            FontFamily="Lucida Console"
+            FontSize="16pt"
+            Width="270"/>
+        <!--Пароль-->
+        <Label
+            Content="Пароль:"
+            HorizontalAlignment="Left"
+            Foreground="DarkSlateGray"
+            FontFamily="Lucida Console"
+            FontSize="12pt"
+            Margin="470,60,0,0"
+            VerticalAlignment="Top" Height="25"/>
+        <Image Source="/Resources/Pass.png" HorizontalAlignment="Left" Height="52" Margin="408,77,0,0" VerticalAlignment="Top" Width="50"/>
+        <PasswordBox x:Name="signUpPass" FontFamily="Lucida Console" FontSize="16pt" HorizontalAlignment="Left" Margin="470,90,0,0" VerticalAlignment="Top" Width="270" Height="39"/>
+
+        <!--Имя и фамилия-->
+        <Label
+            Content="Имя и фамилия:"
+            HorizontalAlignment="Left"
+            Foreground="DarkSlateGray"
+            FontFamily="Lucida Console"
+            FontSize="12pt"
+            Margin="94,144,0,0"
+            VerticalAlignment="Top" Height="23"/>
+        <TextBox
+            x:Name="signUpUserNameSurname"
+            HorizontalAlignment="Left"
+            Height="38" Margin="94,173,0,0"
+            VerticalAlignment="Top"
+            FontFamily="Lucida Console"
+            FontSize="16pt"
+            Width="270"/>
+        <Image Source="/WSR2020;component/Resources/User.png" HorizontalAlignment="Left" Height="52" Margin="32,159,0,0" VerticalAlignment="Top" Width="50"/>
+
+        <!--Повторите пароль-->
+        <Label
+            Content="Повторите пароль:"
+            HorizontalAlignment="Left"
+            Foreground="DarkSlateGray"
+            FontFamily="Lucida Console"
+            FontSize="12pt"
+            Margin="470,144,0,0"
+            VerticalAlignment="Top" Height="24"/>
+        <Image Source="/Resources/passConf.png" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="50" Margin="408,158,0,0"/>
+        <PasswordBox x:Name="signUpPassConf" FontFamily="Lucida Console" FontSize="16pt" HorizontalAlignment="Left" Margin="470,173,0,0" VerticalAlignment="Top" Width="270" Height="37"/>
+
+        <!--Загрузка изображения-->
+        <Label
+            x:Name="selImg"
+            Content="Выберите изображение: (необязательно)"
+            HorizontalAlignment="Left"
+            Foreground="DarkSlateGray"
+            FontFamily="Lucida Console"
+            FontSize="9pt"
+            Margin="210,276,0,0"
+            VerticalAlignment="Top" Height="24"/>
+        <!--<DockPanel x:Name="signUpDockImg" LastChildFill="True" Background="Silver" Margin="94,257,560,147">-->
+        <Image x:Name="signUpImg" HorizontalAlignment="Left" Height="96" Margin="94,257,0,0" VerticalAlignment="Top" Width="96" Visibility="Visible" Stretch="Fill" Source="/Resources/Avatar.png"/>
+
+        <!--СЮДА ДОБАВИТЬ ЗОНУ DRAGNDROP-->
+        <!--</DockPanel>-->
+        <Button 
+            x:Name="downloadImage"
+            Content="Обзор.."
+            HorizontalAlignment="Left"
+            Margin="239,313,0,0"
+            VerticalAlignment="Top"
+            Foreground="WhiteSmoke"
+            FontSize="11pt"
+            FontFamily="Lucida Console"
+            Height="27"
+            Cursor="Hand"
+            Background="SlateGray"
+            Width="106">
+            <Button.Effect>
+                <DropShadowEffect Color="SlateBlue" Opacity=".5" ShadowDepth="4" BlurRadius="8"/>
+            </Button.Effect>
+        </Button>
+
+
+
+        <!--Кнопка Регистрация-->
+        <Button
+            x:Name="signUpBtn"
+            Content="Регистрация"
+            HorizontalAlignment="Left"
+            Margin="514,313,0,0"
+            VerticalAlignment="Top"
+            Foreground="WhiteSmoke"
+            FontSize="11pt"
+            FontFamily="Lucida Console"
+            Height="27"
+            Cursor="Hand"
+            Background="SlateGray"
+            Width="130">
+            <Button.Effect>
+                <DropShadowEffect Color="SlateBlue" Opacity=".5" ShadowDepth="4" BlurRadius="8"></DropShadowEffect>
+            </Button.Effect>
+        </Button>
+        <!--Кнопка Отмена-->
+        <Button x:Name="signUpBtnCancel" Content="&#8678;"
+                Background="CadetBlue"
+                HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="30"
+                Foreground="WhiteSmoke" FontFamily="Lucida Console" FontSize="20pt" Height="28">
+            <Button.Effect>
+                <DropShadowEffect Color="MediumSlateBlue" Opacity=".5" ShadowDepth="4" BlurRadius="8"></DropShadowEffect>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Page>
